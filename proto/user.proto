@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package gen;
+option go_package = ".;gen";
+
+message Request {
+  int32 userId = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string email = 4;
+  string password = 5;
+}
+
+message Response {
+  int32 userId = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string email = 4;
+  string fullName = 5;
+}
+
+service UserService {
+  rpc GetUsers(Request) returns (Response);
+}
